@@ -2,12 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './App'
-import { store } from './reducers'
+import configureStore from './store/configureStore'
 
-if (process.env.NODE_ENV !== 'production') {
-  const whyDidYouRender = require('@welldone-software/why-did-you-render')
-  whyDidYouRender(React)
-}
+const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>

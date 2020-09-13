@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const SingleUser = styled.div`
+  display: flex;
+  flex-direction: column;
   border: 2px solid black;
   padding-left: 10px;
   padding-top: 15px;

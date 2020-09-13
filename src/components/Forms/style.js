@@ -11,6 +11,19 @@ export const FormContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  & > ::before {
+    content: '';
+    width: 100%;
+    height: 10px;
+    border-bottom: 2px solid black;
+  }
+  & > ::after {
+    content: '';
+    width: 100%;
+    height: 10px;
+    border-top: 2px solid black;
+    margin-top: 5px;
+  }
 `
 export const StyledForm = styled.form`
   background-color: white;
@@ -75,20 +88,33 @@ export const InputContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   position: relative;
-`
-export const StyledInput = styled.input`
-  width: 75%;
-  flex-grow: 2;
-`
-export const Label = styled.label`
-  width: 20%;
+  margin: 5px 0 2px 0;
+  > label {
+    width: 95%;
+    position: relative;
+    > input {
+      position: absolute;
+      min-width: 85%;
+      left: 15%;
+      @media (max-width: 850px) {
+        left: 20%;
+      }
+    }
+  }
 `
 export const TextareaContainer = styled(InputContainer)`
-  height: 90px;
-`
-export const StyledTextarea = styled.textarea`
-  width: 75%;
-  flex-grow: 2;
+  > label {
+    height: 90px;
+    > textarea {
+      min-height: 90%;
+      position: absolute;
+      left: 15%;
+      min-width: 85%;
+      @media (max-width: 850px) {
+        left: 20%;
+      }
+    }
+  }
 `
 export const ErrorContainer = styled.div`
   position: relative;
